@@ -5,22 +5,28 @@
       <h1>JS ES 2</h1>
       <h2>Static HTML page: excercise 1 but with JQuery</h2>
       <div id="div1"></div>
-      <button id=btn1>CLICCAMI</button>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script>
-          var red = true;
         $("#div1").html("non premere il bottone!");
-        $("#btn1").click(function(){
+        var red = true;
+        $("body")
+          .append($("<button id=btn1>CLICCAMI</button>"))
+          .click(function () {
             $("#div1").attr("style", "background-color: rgb(170, 30, 70)"),
-            $("#div1").html("Ti avevo detto di non premere mona");
-            if(red){
-                $("#div1").attr("style", "backgroud-color: RED");
-                red = false;
-            }else{
-                $("#btn1").removeAttr("style");
-                red = true;
+              $("#div1").html("Ti avevo detto di non premere mona");
+            if (red) {
+              $("#div1").attr("style", "backgroud-color: RED");
+              red = false;
+            } else {
+              $("#btn1").removeAttr("style");
+              red = true;
             }
-        });
+          });
+
+        console.log($("#div1"));
+        console.log($("div1"));
+
+        $("body").append($("<h3>Aggiungo un titolo H3</h3>"));
       </script>
     </body>
   </head>
